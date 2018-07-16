@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "experimentalDecorators": true,
+        "allowSyntheticDefaultImports": true,
+        "module": "es6",
+        "allowJs": true,
+        "sourceMap": true,
+        "outDir": "./dist/",
+        "jsx": "preserve",
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}
