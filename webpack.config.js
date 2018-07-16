@@ -100,8 +100,12 @@ module.exports = {
       template: "./src/template.html",
       inject: true
     }),
+    new webpack.DefinePlugin({
+      _NODE_ENV_: JSON.stringify(NODE_ENV), // 必须stringify，否则字符串会被认为是代码片段
+      "process.env.NODE_ENV": JSON.stringify(NODE_ENV || "development")
+    }),
     new UglifyJsPlugin()
   ],
-  mode:NODE_ENV,
+  mode: NODE_ENV,
   devtool: NODE_ENV === "production" ? "" : "eval-source-map"
 };
