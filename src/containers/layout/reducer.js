@@ -1,3 +1,5 @@
+import { Map } from 'immutable';
+
 const ActionTypes = {
   CONTAINER_LEFT_CHANGE_TAB: "CONTAINER_LEFT_CHANGE_TAB"
 };
@@ -13,14 +15,14 @@ export const actions = {
   changeTab
 };
 
-const initialState ={
+const initialState = Map({
   activeTab: 1
-};
+});
 
 export default function (state = initialState, action = {}) {
   switch (action.type) {
     case ActionTypes.CONTAINER_LEFT_CHANGE_TAB: {
-      return { activeTab: action.status };
+      return Map({ activeTab: action.status });
     }
     default:
       return state;

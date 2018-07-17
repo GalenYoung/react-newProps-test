@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware, compose } from "redux";
 import { combineReducers } from 'redux-immutable';
-import Immutable from 'immutable';
+import { Map } from 'immutable';
 import thunkMiddleware from "redux-thunk";
 
 import layout, { actions as _layoutAction } from "containers/layout/reducer"; // 聊天列表
@@ -9,7 +9,7 @@ const rootReducer = combineReducers({
   layout
 });
 
-const initialState = Immutable.Map();
+const initialState = Map();
 const appStore = createStore(
   rootReducer,
   initialState,

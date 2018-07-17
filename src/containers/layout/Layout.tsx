@@ -1,8 +1,9 @@
 ///<reference path='./../../../node_modules/immutable/dist/immutable.d.ts'/>
+
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import appStore, { layoutAction } from "store/index";
-import { is, Map } from 'immutable';
+import { is } from 'immutable';
 import Style from "./layout.less";
 
 const leftData = ["A", "B", "C", "D"];
@@ -11,6 +12,7 @@ const rightData = [1, 2, 3, 4];
 interface LayoutProps {
     layout: any
 }
+
 class Layout extends Component<LayoutProps>{
     constructor(props) {
         super(props);
@@ -33,9 +35,6 @@ class Layout extends Component<LayoutProps>{
 
         for (const key in nextProps) {
             if (!is(thisProps[key], nextProps[key])) {
-                if (typeof thisProps[key] === "object" && Map(thisProps[key]).equals(Map(nextProps[key]))) {
-                    return false;
-                }
                 return true;
             }
         }
@@ -57,14 +56,14 @@ class Layout extends Component<LayoutProps>{
 
     render() {
         const { layout } = this.props;
-
+        console.log("layout:", layout);
         return (
-            <div className={Style['layout']}>
+            <div className={Style['layoutBox']}>
                 <aside className={Style['left']}>
                     <nav>
                         <ul onClick={this.choiceEvent}>
                             {leftData.map((item, index) => {
-                                return index === layout.activeTab ?
+                                return index === layout.get('activeTab') ?
                                     <li key={item} data-id={index} className={Style['active']}>{item}</li> :
                                     <li key={item} data-id={index}>{item}</li>
                             })

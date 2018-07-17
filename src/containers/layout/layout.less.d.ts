@@ -1,6 +1,6 @@
 export interface ILayoutLess {
   'app': string;
-  'layout': string;
+  'layoutBox': string;
   'left': string;
   'active': string;
 }
