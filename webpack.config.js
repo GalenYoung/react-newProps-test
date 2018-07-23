@@ -5,7 +5,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 //定义文件路径
 const ROOT_PATH = path.resolve(__dirname);
-const APP_PATH = path.resolve(ROOT_PATH, './src/app.js');
+const APP_PATH = path.resolve(ROOT_PATH, './src/app');
 const BUILD_PATH = path.resolve(ROOT_PATH, './dist/');
 
 const NODE_ENV = process.env.NODE_ENV ? process.env.NODE_ENV : "development";
