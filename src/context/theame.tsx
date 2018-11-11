@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 
 const ThemeContext = React.createContext({
-  theme:"dark",
-  toggleTheme:()=>{},
+  theme:"dark"
 });
 export default  ThemeContext;
