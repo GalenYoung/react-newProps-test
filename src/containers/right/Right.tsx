@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import ConsumerComponents from "components/consumerComponents/ConsumerComponents";
+// import ConsumerComponents from "components/consumerComponents/ConsumerComponents";
 import Style from "./right.less";
 
 const rightData = [1, 2, 3, 4];
@@ -20,7 +20,7 @@ export default class Right extends PureComponent {
       <ul>
           {rightData.map(item => { return <li key={item}>{item}</li> })}
       </ul>
-      <ConsumerComponents/>
+      {/* <ConsumerComponents/> */}
   </article>
     )
   }

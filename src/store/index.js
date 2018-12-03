@@ -14,11 +14,11 @@ const appStore = createStore(
   rootReducer,
   initialState,
   compose(
-    applyMiddleware(thunkMiddleware)
-  ),
-  _NODE_ENV_ !== "production" && window.devToolsExtension
+    applyMiddleware(thunkMiddleware),
+    _NODE_ENV_ !== "production" && window.devToolsExtension
     ? window.devToolsExtension()
     : f => f
+  ),
 );
 export default appStore;
 export const layoutAction = _layoutAction;

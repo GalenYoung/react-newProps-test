@@ -5,6 +5,7 @@ const ActionTypes = {
 };
 
 function changeTab(status) {
+  console.log(status,"status");
   return {
     type: ActionTypes.CONTAINER_LEFT_CHANGE_TAB,
     status
